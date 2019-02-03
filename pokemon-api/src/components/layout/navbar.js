@@ -6,7 +6,7 @@ export default class navbar extends Component {
 		return (
 			<div>
 				<nav className="navbar navbar-expand-md navbar-dark fixed-top">
-					<a href="test.html">Shane</a>
+					<a className="navbar-brand col-sm-3 col-md-2 mr-0 align-items-center" href="test.html">Pokedex</a>
 				</nav>
 			</div>
 		)
