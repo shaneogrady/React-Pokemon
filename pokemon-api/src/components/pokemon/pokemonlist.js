@@ -10,15 +10,29 @@ export default class PokemonList extends Component {
     pokemon: null
   };
 
-  componentDidMount() {
-
+  async componentDidMount() {
+    const res = await axios.get(this.state.url);
+    console.log('RESULTS', res.data);
+    this.setState({ pokemon: res.data['results'] });
   }
 
   render() {
     return (
-      <div className="row">
-        <PokemonCard />
-      </div>
+      <React.Fragment>
+        {this.state.pokemon ? (
+          <div className="row">
+            {this.state.pokemon.map(pokemon => (
+              <PokemonCard
+                key={pokemon.name}
+                name={pokemon.name}
+                url={pokemon.url}
+              />
+            ))}
+          </div>
+        ) : (
+            <h1>Loading...</h1>
+          )}
+      </React.Fragment>
     )
   }
 }
