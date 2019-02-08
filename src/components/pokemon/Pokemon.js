@@ -63,7 +63,37 @@ export default class Pokemon extends Component {
                     specialDefense = stat['base_stat'];
                     break;
             }
+        });
+
+        // Convert to feet
+        const height =
+            Math.round((pokemonResponse.data.height * 0.328084 + 0.0001) * 100) / 100;
+
+        // Convet to lbs
+        const weight =
+            Math.round((pokemonResponse.data.weight * 0.220462 + 0.0001) * 100) / 100;
+
+        const types = pokemonResponse.data.types.map(type => type.type.name);
+
+        //camel case
+        const abilities = pokemonResponse.data.abilities.map(ability => {
+            return ability.abilities.name.toLowerCase().split('-').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
+        });
+
+        const evs = pokemonResponse.data.stats.filter(stat => {
+            if (stat.effort > 0) {
+                return true;
+            } else {
+                return false;
+            }
         })
+            .map(stat => {
+                return `${stat.effort} ${stat.stat.name}`
+                    .toLowerCase()
+                    .split('-')
+                    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+            })
+            .join(', ');
     }
 
     render() {
