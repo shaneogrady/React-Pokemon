@@ -1,3 +1,9 @@
+## Pokedex React App 
+
+Pokemon react app using pokeApi 
+https://pokeapi.co/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
