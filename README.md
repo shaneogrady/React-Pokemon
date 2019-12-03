@@ -1,8 +1,19 @@
-## Pokedex React App 
+# Pokédex React App 
 
-Pokemon react app using pokeApi 
-https://pokeapi.co/
+Pokemon React app using PokeApi 
 
+## Built With
+
+* [PokeApi](https://pokeapi.co/) - The web framework used
+* [React](https://reactjs.org/) - Dependency Management
+
+### Pokemon Detail View 
+
+![detail](public/images/info.png)
+
+### Pokemon Home / Search View 
+
+![home](public/images/home.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
